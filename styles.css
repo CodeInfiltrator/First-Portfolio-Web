@@ -1,0 +1,410 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap");
+
+:root {
+  scroll-behavior: smooth;
+  --primaryTextColor: #232e35; /* Untuk title atau judul */
+  --secondaryTextColor: #656d72; /* Untuk text biasa seperti paragraph contohnya */
+
+  --borderColor: #f1f1f1;
+  --lineColor: #000; /* untuk line di pre-title */
+
+  --primaryBackgroundColor: #fff;
+  --secondaryBackgroundColor: #fbfbfb;
+  --thirdBackgroundColor: #f5f3fe;
+
+  --primaryIconColor: #0018f9;
+  --primaryIconColorHover: #1134a6;
+
+  --sectionPadding: 6rem 0;
+
+  --itemBorderRadius: 0.7rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  color: var(--primaryTextColor);
+}
+
+p {
+  font-size: 1rem;
+  float: left;
+  line-height: 1.95rem;
+  margin-right: 0.5rem;
+}
+
+p,
+span,
+label,
+input,
+textarea,
+li {
+  color: var(--secondaryTextColor);
+}
+
+a {
+  text-decoration: none;
+}
+
+.hero-bg {
+  background-image: url("herobg1.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .main-container {
+    width: 90%;
+  }
+}
+
+/* Logo D */
+
+/* Titles */
+
+.section-title {
+  margin: 1rem 0 4rem;
+  font-size: 2rem;
+}
+
+.pre-title {
+  text-transform: uppercase;
+  letter-spacing: 0.45rem;
+  color: var(--secondaryTextColor);
+  position: relative;
+  padding-left: 40px;
+  width: fit-content;
+  font-weight: 495;
+  font-size: 1rem;
+}
+
+.pre-title::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--lineColor);
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 45%;
+}
+
+/* Logo and Nav Menu */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 25rem;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  z-index: 1;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  margin-top: 6px;
+  margin-right: 88px;
+  font-size: 1rem;
+  gap: 3rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 45px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 13px;
+  box-shadow: 4px 7px 7px 0px;
+  cursor: pointer;
+  margin: 20px;
+  transition: 400ms;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a {
+  color: var(--primaryTextColor);
+  font-weight: 600;
+  padding: -6px;
+  transition: all;
+  transition-duration: 300ms;
+}
+
+nav ul li a:hover {
+  color: blue;
+  border-bottom: 3px solid blue;
+}
+
+/* Burger */
+.burger div {
+  width: 25px;
+  height: 2px;
+  background-color: #000;
+  margin: 7px;
+  transition: all 0.25s;
+  z-index: 99;
+}
+
+.burger {
+  display: none;
+  z-index: 99;
+  position: fixed;
+  top: 34px;
+  right: 35px;
+}
+
+/* Hero 1 Div */
+#hero {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* fraction yg membagi section */
+  align-items: center;
+}
+
+.hero-name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem;
+}
+
+.hero-name span {
+  color: var(--primaryIconColor);
+}
+
+.hero-right img {
+  max-width: 100%;
+  width: 70%;
+  height: 80%;
+  margin-top: 130px;
+  margin-left: 170px;
+  object-fit: cover;
+  transition: transform 0.5s;
+  border-radius: 10%;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-right:hover img {
+  transform: scale(1.1);
+}
+
+/* Buttons */
+.btn {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  margin-top: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn:hover {
+  background-color: #73c2fb;
+  box-shadow: 0px 15px 20px rgb(87 160 211 / 40%);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+/* About 2 div */
+#about {
+  background-image: url("divbg2.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  max-width: 100vw;
+  max-height: 120vh;
+  padding: var(--sectionPadding);
+}
+
+.about .pre-title {
+  margin: 0 auto;
+}
+
+.about-title {
+  text-align: center;
+  font-size: 30px;
+}
+
+.about-title span {
+  color: #0018f9;
+  font-size: 30px;
+}
+
+/* layout */
+.div-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.div-3 img {
+  max-width: 100%;
+  width: 24%;
+  height: 20%;
+  border: 2px solid #fff;
+  border-radius: 13px;
+  box-shadow: 4px 7px 7px 0px;
+  cursor: pointer;
+  margin: 10px;
+  transition: 400ms;
+}
+
+.div-3 img:hover {
+  transform: scale(1.03);
+}
+
+/* Contact Section */
+#contact {
+  background-image: url("herobg1.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  max-width: 100vw;
+  max-height: 100vh;
+  padding: var(--sectionPadding);
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+.contact-form div {
+  margin-bottom: 1.4rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1.3rem;
+  font-family: "Inter", sans-serif;
+  background: var(#000);
+  border: 1px solid var(#000);
+  border-radius: 3px;
+  resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #9d9fa1;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border: 1px solid #7d7d7d;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 0.75rem 1.3rem;
+  background-color: var(--primaryIconColor);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-submit:hover {
+  background: var(--primaryIconColorHover);
+}
+
+.contact-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-item-icon {
+  background-color: var(--thirdBackgroundColor);
+  width: 53px;
+  height: 53px;
+  border-radius: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-item-icon svg {
+  fill: var(--primaryIconColor);
+}
+
+.contact-item-detail h4 {
+  margin-bottom: 0.6rem;
+}
+
+/* Footer Section */
+
+footer {
+  padding: 4rem 0;
+  background-image: url("divbg2.jpg");
+  text-align: center;
+}
+
+.footer-icons {
+  margin-bottom: 1rem;
+}
+
+.footer-icons a {
+  margin: 0 0.5rem;
+}
+
+.footer-icons svg {
+  fill: #3e3f40;
+}
+
+.footer-icons a:hover svg {
+  fill: #000;
+}
+
+.footer-h6 {
+  text-align: center;
+}
